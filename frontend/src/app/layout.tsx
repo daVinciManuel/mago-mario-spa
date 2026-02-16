@@ -1,45 +1,21 @@
-import type { Metadata } from "next";
-import "./globals.css";
-
-// 1. Definimos las variables de estilo para que las cambies cuando quieras
-const THEME = {
-  bgColor: "#d5c6b3",
-  textureUrl: "https://www.transparenttextures.com/patterns/natural-paper.png",
-  mainFont: "serif", // Usaremos la fuente serif del sistema para el toque antiguo
-};
+import type { Metadata } from 'next';
+import { cinzel, crimsonText } from './fonts';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Mario Wenceslao | Magia",
-  description: "Magia y artes escenicas",
+  title: 'El Mago de Madrid',
+  description: 'Artes místicas y encantamientos en Madrid',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="es">
-      <body
-        className="antialiased"
-        style={{
-          backgroundColor: THEME.bgColor,
-          fontFamily: THEME.mainFont
-        }}
-      >
-        {/* Capa de textura global */}
-        <div
-          className="fixed inset-0 z-0 pointer-events-none opacity-40"
-          style={{
-            backgroundImage: `url(${THEME.textureUrl})`,
-            backgroundAttachment: 'fixed'
-          }}
-        />
-
-        {/* Contenedor del contenido */}
-        <div className="relative z-10">
-          {children}
-        </div>
+    <html lang="es" className={`${cinzel.variable} ${crimsonText.variable}`}>
+      <body className={crimsonText.className}>
+        {children}
       </body>
     </html>
   );

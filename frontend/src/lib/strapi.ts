@@ -1,5 +1,9 @@
 const BASE_URL = 'http://localhost:1337';
 
+const QUERY_HOME_PAGE = {
+
+}
+
 export async function getStrapiData(url: string) {
   try {
     const response = await fetch(`${BASE_URL}${url}`);
