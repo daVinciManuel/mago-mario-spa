@@ -2,117 +2,25 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { OldPaperBg } from '@/components/ui/OldPaperBg';
+import { HeroSection } from '@/components/sections/HeroSection'
 
 export const metadata: Metadata = {
   title: 'El Mago de Madrid | Artes Místicas y Encantamientos',
   description: 'Descubre los antiguos secretos de la magia en el corazón de Madrid. Espectáculos, consultas y ceremonias místicas.',
 };
 
+
 export default function HomePage() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section - Medieval Style */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-
-        {/* SOLO Textura de papel viejo como fondo */}
-        <OldPaperBg></OldPaperBg>
-
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-center">
-          {/* Medieval ornament top */}
-          <div className="mb-6">
-            <div className="inline-flex items-center gap-4">
-              <span className="text-amber-800 text-3xl">⚜️</span>
-              <span className="text-amber-900/80 text-sm font-crimson tracking-[0.3em] uppercase border-t border-b border-amber-800/50 px-6 py-2 bg-amber-50/30 backdrop-blur-sm">
-                Madrid · Anno Domini MMXXVI
-              </span>
-              <span className="text-amber-800 text-3xl">⚜️</span>
-            </div>
-          </div>
-
-          {/* Main title with medieval font style */}
-          <h1 className="text-5xl md:text-8xl font-bold mb-8 text-amber-950 drop-shadow-lg font-cinzel tracking-wider">
-            {/* pre titulo  */}
-            <span className="block text-5xl md:text-6xl text-amber-800 mb-4" style={{ fontVariant: 'small-caps' }}>
-              El Gran
-            </span>
-            {/* titulo  */}
-            <span className="block">
-              Mario Wenceslao
-            </span>
-          </h1>
-
-          {/* Medieval decorative line */}
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="h-px w-24 bg-gradient-to-r from-transparent via-amber-800 to-transparent"></div>
-            <span className="text-amber-800 text-2xl">✦</span>
-            <div className="h-px w-24 bg-gradient-to-r from-transparent via-amber-800 to-transparent"></div>
-          </div>
-
-          {/* subtitulo 1 */}
-          <p className="text-xl md:text-2xl text-amber-950/90 mb-12 max-w-3xl mx-auto leading-relaxed font-crimson">
-            Guardián de los antiguos secretos arcanos y maestro de las artes místicas.
-            {/* subtitulo 2 */}
-            <span className="block mt-2 text-lg text-amber-900/80 italic">
-              &quot;Donde la sabiduría milenaria cobra vida en la modernidad&quot;
-            </span>
-          </p>
-
-          {/* Medieval-style CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 pointer-events-none">
-            <Link
-              href="/contact"
-              className="group relative px-10 py-5 bg-gradient-to-b from-amber-700 via-amber-800 to-amber-900 text-amber-50 font-bold rounded-sm overflow-hidden transition-all duration-300 hover:scale-105 shadow-2xl shadow-amber-900/50 border-2 border-amber-600/50 font-cinzel tracking-widest"
-            >
-              {/* contact btn text */}
-              <span className="relative z-10 flex items-center gap-3 uppercase text-sm">
-                {/* contact btn emoji 1 */}
-                <span className="text-lg">🗡️</span>
-                Reservar evento
-                {/* contact btn emoji 2 */}
-                <span className="text-lg">🗡️</span>
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-t from-amber-600/0 via-amber-500/20 to-amber-400/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </Link>
-
-            <Link
-              href="/services"
-              className="px-10 py-5 bg-amber-100/80 text-amber-900 font-semibold rounded-sm border-2 border-amber-800/50 backdrop-blur-sm hover:bg-amber-50 hover:border-amber-800 transition-all duration-300 shadow-xl uppercase text-sm font-cinzel tracking-widest"
-            >
-              {/* services btn text */}
-              <span className='flex items-center gap-2'>
-                {/* services btn emoji 1 */}
-                <span className="text-lg"></span>
-                consultar servicios
-                {/* services btn emoji 2 */}
-                <span className="text-lg"></span>
-              </span>
-            </Link>
-          </div>
-
-          {/* Medieval trust seals */}
-          <div className="flex flex-wrap justify-center gap-8 text-sm text-amber-900 font-crimson">
-            <div className="flex items-center gap-2 border border-amber-800/40 px-4 py-2 rounded-sm bg-amber-50/40 backdrop-blur-sm">
-              <span className="text-amber-800 text-xl">⚔️</span>
-              <span>+100 Espect&aacute;culos</span>
-            </div>
-            <div className="flex items-center gap-2 border border-amber-800/40 px-4 py-2 rounded-sm bg-amber-50/40 backdrop-blur-sm">
-              <span className="text-amber-800 text-xl">📜</span>
-              <span>20 Años de Magia</span>
-            </div>
-            <div className="flex items-center gap-2 border border-amber-800/40 px-4 py-2 rounded-sm bg-amber-50/40 backdrop-blur-sm">
-              <span className="text-amber-800 text-xl">🏰</span>
-              <span>Comunidad de Madrid</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator - Medieval style */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="text-amber-800 text-2xl">↓</div>
-          <div className="text-amber-900/70 text-xs font-crimson uppercase tracking-widest mt-2">Descender</div>
-        </div>
-      </section>
+      <HeroSection
+        title={heroSection.title}
+        subtitle={heroSection.subtitle}
+        subtitle2={heroSection.subtitle2}
+        pretitle={heroSection.pretitle}
+        cta={heroSection.cta}
+        trustSeals={heroSection.trustSeals}
+      />
 
       {/* Services - Medieval Scroll Style */}
       <section className="relative py-24">
@@ -162,7 +70,7 @@ export default function HomePage() {
                     className="inline-flex items-center gap-2 text-amber-800 font-semibold hover:text-amber-900 transition-colors uppercase text-sm tracking-wider font-cinzel"
                   >
                     <span>Explorar</span>
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    <span className="group-hover:translate-x-1 transition-transform text-2xl -translate-y-1">→</span>
                   </Link>
                 </div>
               </div>
@@ -299,3 +207,31 @@ const services = [
     link: '/services/workshops',
   },
 ];
+const heroSection = {
+  pretitle: 'El Gran',
+  title: 'Mario Wenceslao',
+  subtitle: 'Guardián de los antiguos secretos arcanos y maestro de las artes místicas.',
+  subtitle2: '"Donde la sabiduría milenaria cobra vida en la modernidad"',
+  cta: {
+    link: '/contact',
+    text: 'Reservar evento',
+    emoji: '🗡️',
+    link2: '/services',
+    text2: 'consultar servicios',
+    emoji2: '',
+  },
+  trustSeals: [
+    {
+      text: '+100 Espectáculos',
+      emoji: '⚔️'
+    },
+    {
+      text: '20 Años de Magia',
+      emoji: '📜'
+    },
+    {
+      text: 'Comunidad de Madrid',
+      emoji: '🏰'
+    }
+  ],
+}
