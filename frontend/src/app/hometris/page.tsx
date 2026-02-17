@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { OldPaperBg } from '@/components/ui/OldPaperBg';
 
 export const metadata: Metadata = {
   title: 'El Mago de Madrid | Artes Místicas y Encantamientos',
@@ -14,20 +15,7 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
         {/* SOLO Textura de papel viejo como fondo */}
-        <div className="absolute inset-0">
-          <Image
-            src="/textures/bgOldPaper.webp"
-            alt=""
-            fill
-            quality={90}
-            priority
-            sizes="100vw"
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
-          />
-        </div>
+        <OldPaperBg></OldPaperBg>
 
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-center">
@@ -44,9 +32,11 @@ export default function HomePage() {
 
           {/* Main title with medieval font style */}
           <h1 className="text-5xl md:text-8xl font-bold mb-8 text-amber-950 drop-shadow-lg font-cinzel tracking-wider">
+            {/* pre titulo  */}
             <span className="block text-5xl md:text-6xl text-amber-800 mb-4" style={{ fontVariant: 'small-caps' }}>
               El Gran
             </span>
+            {/* titulo  */}
             <span className="block">
               Mario Wenceslao
             </span>
@@ -59,22 +49,27 @@ export default function HomePage() {
             <div className="h-px w-24 bg-gradient-to-r from-transparent via-amber-800 to-transparent"></div>
           </div>
 
+          {/* subtitulo 1 */}
           <p className="text-xl md:text-2xl text-amber-950/90 mb-12 max-w-3xl mx-auto leading-relaxed font-crimson">
             Guardián de los antiguos secretos arcanos y maestro de las artes místicas.
+            {/* subtitulo 2 */}
             <span className="block mt-2 text-lg text-amber-900/80 italic">
               &quot;Donde la sabiduría milenaria cobra vida en la modernidad&quot;
             </span>
           </p>
 
           {/* Medieval-style CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 pointer-events-none">
             <Link
               href="/contact"
               className="group relative px-10 py-5 bg-gradient-to-b from-amber-700 via-amber-800 to-amber-900 text-amber-50 font-bold rounded-sm overflow-hidden transition-all duration-300 hover:scale-105 shadow-2xl shadow-amber-900/50 border-2 border-amber-600/50 font-cinzel tracking-widest"
             >
+              {/* contact btn text */}
               <span className="relative z-10 flex items-center gap-3 uppercase text-sm">
+                {/* contact btn emoji 1 */}
                 <span className="text-lg">🗡️</span>
                 Reservar evento
+                {/* contact btn emoji 2 */}
                 <span className="text-lg">🗡️</span>
               </span>
               <div className="absolute inset-0 bg-gradient-to-t from-amber-600/0 via-amber-500/20 to-amber-400/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -84,7 +79,14 @@ export default function HomePage() {
               href="/services"
               className="px-10 py-5 bg-amber-100/80 text-amber-900 font-semibold rounded-sm border-2 border-amber-800/50 backdrop-blur-sm hover:bg-amber-50 hover:border-amber-800 transition-all duration-300 shadow-xl uppercase text-sm font-cinzel tracking-widest"
             >
-              consultar servicios
+              {/* services btn text */}
+              <span className='flex items-center gap-2'>
+                {/* services btn emoji 1 */}
+                <span className="text-lg"></span>
+                consultar servicios
+                {/* services btn emoji 2 */}
+                <span className="text-lg"></span>
+              </span>
             </Link>
           </div>
 
@@ -115,18 +117,7 @@ export default function HomePage() {
       {/* Services - Medieval Scroll Style */}
       <section className="relative py-24">
         {/* Textura de fondo para servicios */}
-        <div className="absolute inset-0">
-          <Image
-            src="/textures/bgOldPaper.webp"
-            alt=""
-            fill
-            quality={80}
-            sizes="100vw"
-            style={{
-              objectFit: 'cover',
-            }}
-          />
-        </div>
+        <OldPaperBg></OldPaperBg>
 
         {/* Overlay muy sutil para diferenciar secciones */}
         <div className="absolute inset-0 bg-amber-900/5"></div>
@@ -183,18 +174,7 @@ export default function HomePage() {
       {/* Main CTA Section - Parchment Scroll Style */}
       <section className="relative py-32 overflow-hidden">
         {/* Textura de pergamino en CTA */}
-        <div className="absolute inset-0">
-          <Image
-            src="/textures/bgOldPaper.webp"
-            alt=""
-            fill
-            quality={85}
-            sizes="100vw"
-            style={{
-              objectFit: 'cover',
-            }}
-          />
-        </div>
+        <OldPaperBg></OldPaperBg>
 
         {/* Overlay para diferenciación sutil */}
         <div className="absolute inset-0 bg-gradient-to-b from-amber-900/10 via-transparent to-amber-900/10"></div>
