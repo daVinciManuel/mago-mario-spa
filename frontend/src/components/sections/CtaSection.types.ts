@@ -1,8 +1,4 @@
-interface CTAButton {
-  link: string;
-  text: string;
-  emoji: string;
-}
+import { CTAButton } from "@/types/types";
 
 export interface CtaSectionData {
   icon: string;

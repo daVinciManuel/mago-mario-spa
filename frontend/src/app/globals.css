@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* reset translate in firefox browsers */
+
+
 /* Configuración de fuentes personalizadas en Tailwind v4 */
 @theme {
   --font-family-cinzel: 'Cinzel', serif;

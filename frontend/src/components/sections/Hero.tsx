@@ -1,6 +1,6 @@
-import Link from "next/link"
 import { OldPaperBg } from "../ui/OldPaperBg"
 import { HeroSectionData } from "./Hero.types";
+import { CtaButton } from "../ui/CtaButton";
 
 interface HeroProps {
   data: HeroSectionData;
@@ -40,9 +40,9 @@ export const HeroSection = ({ data }: HeroProps) =>
 
       {/* Medieval decorative line */}
       <div className="flex items-center justify-center gap-4 mb-8">
-        <div className="h-px w-24 bg-gradient-to-r from-transparent via-amber-800 to-transparent"></div>
+        <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-amber-800 to-transparent"></div>
         <span className="text-amber-800 text-2xl">✦</span>
-        <div className="h-px w-24 bg-gradient-to-r from-transparent via-amber-800 to-transparent"></div>
+        <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-amber-800 to-transparent"></div>
       </div>
 
       {/* subtitulo 1 */}
@@ -56,28 +56,8 @@ export const HeroSection = ({ data }: HeroProps) =>
 
       {/* Medieval-style CTA Buttons */}
       <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 select-none">
-        <Link
-          href={data.cta[0].link}
-          className="group relative px-10 py-5 bg-gradient-to-b from-amber-700 via-amber-800 to-amber-900 text-amber-50 font-bold rounded-sm overflow-hidden transition-all duration-300 hover:scale-105 shadow-2xl shadow-amber-900/50 border-2 border-amber-600/50 font-cinzel tracking-widest"
-        >
-          <span className="relative z-10 flex items-center gap-3 uppercase text-sm">
-            <span className="text-lg">{data.cta[0].emoji}</span>
-            {data.cta[0].text}
-            <span className="text-lg">{data.cta[0].emoji}</span>
-          </span>
-          <div className="absolute inset-0 bg-gradient-to-t from-amber-600/0 via-amber-500/20 to-amber-400/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </Link>
-
-        <Link
-          href={data.cta[1].link}
-          className="px-10 py-5 bg-amber-100/80 text-amber-900 font-semibold rounded-sm border-2 border-amber-800/50 backdrop-blur-sm hover:bg-amber-50 hover:border-amber-800 transition-all duration-300 shadow-xl uppercase text-sm font-cinzel tracking-widest"
-        >
-          <span className='flex items-center gap-2'>
-            <span className="text-lg">{data.cta[1].emoji}</span>
-            {data.cta[1].text}
-            <span className="text-lg">{data.cta[1].emoji}</span>
-          </span>
-        </Link>
+        <CtaButton data={data.cta[0]} type="primary" />
+        <CtaButton data={data.cta[1]} type="secondary" />
       </div>
 
       {/* Medieval trust seals */}

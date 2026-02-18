@@ -1,8 +1,4 @@
-interface CTAButton {
-  link: string;
-  text: string;
-  emoji: string;
-}
+import { CTAButton } from "@/types/types";
 
 interface TrustSeal {
   text: string;

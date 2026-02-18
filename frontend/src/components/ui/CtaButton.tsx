@@ -1,0 +1,31 @@
+import Link from "next/link"
+import { CtaButtonData } from "@/types/types"
+interface Props {
+  data: CtaButtonData;
+  type: 'primary' | 'secondary';
+}
+export const CtaButton = ({ data, type }: Props) =>
+  type === 'primary' ?
+    (
+      <Link
+        href={data.link}
+        className="group relative px-12 py-6 bg-gradient-to-b from-amber-700 via-amber-800 to-amber-900 text-amber-50 text-lg font-bold rounded-sm overflow-hidden transition-all duration-300 hover:scale-105 shadow-2xl shadow-amber-900/50 border-2 border-amber-600 font-cinzel tracking-[0.15em]"
+      >
+        <span className="relative z-10 flex items-center gap-4 uppercase">
+          <span>{data.emoji}</span>
+          {data.text}
+          <span>{data.emoji}</span>
+        </span>
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-amber-500/20 to-amber-400/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </Link>
+    ) :
+    (
+      <Link
+        href={data.link}
+        className="px-12 py-6 bg-amber-100/80 text-amber-900 text-lg font-bold rounded-sm border-2 border-amber-800/50 backdrop-blur-sm hover:bg-amber-50 hover:border-amber-800 transition-all duration-300 uppercase shadow-xl flex items-center gap-4 font-cinzel tracking-[0.15em]"
+      >
+        <span>{data.emoji}</span>
+        {data.text}
+        <span>{data.emoji}</span>
+      </Link>
+    )

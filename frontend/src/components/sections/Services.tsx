@@ -52,7 +52,7 @@ export const ServiceSection = ({ data }: ServiceProps) =>
                 className="inline-flex items-center gap-2 text-amber-800 font-semibold hover:text-amber-900 transition-colors uppercase text-sm tracking-wider font-cinzel"
               >
                 <span>Explorar</span>
-                <span className="group-hover:translate-x-1 transition-transform text-2xl -translate-y-1">→</span>
+                <span className="group-hover:translate-x-1 transition-transform text-2xl -translate-y-1 ">→</span>
               </Link>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import { OldPaperBg } from "../ui/OldPaperBg"
-import Link from "next/link"
 import { CornersDecoration } from "../ui/CornersDecoration"
 import { CtaSectionData } from "./CtaSection.types"
+import { CtaButton } from "../ui/CtaButton"
 interface CtaProps {
   data: CtaSectionData;
 }
@@ -21,7 +21,7 @@ export const CtaSection = ({ data }: CtaProps) =>
         <CornersDecoration size='big' />
 
         <div className="text-center">
-          {/* Medieval seal */}
+          {/* Medieval icon */}
           <div className="mb-8 inline-block">
             <div className="relative w-24 h-24 mx-auto">
               <div className="absolute inset-0 rounded-full bg-gradient-to-b from-amber-700 to-amber-900"></div>
@@ -43,9 +43,9 @@ export const CtaSection = ({ data }: CtaProps) =>
 
           {/* Medieval decorative divider */}
           <div className="flex items-center justify-center gap-4 my-8">
-            <div className="h-px w-16 bg-gradient-to-r from-transparent via-amber-800 to-transparent"></div>
-            <span className="text-amber-800">⚜️</span>
-            <div className="h-px w-16 bg-gradient-to-r from-transparent via-amber-800 to-transparent"></div>
+            <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-amber-800 to-transparent"></div>
+            <span className="text-amber-800 md:text-2xl">⚜️</span>
+            <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-amber-800 to-transparent"></div>
           </div>
 
           <p className="text-xl md:text-2xl text-amber-950/90 mb-12 max-w-3xl mx-auto font-crimson leading-relaxed">
@@ -57,26 +57,8 @@ export const CtaSection = ({ data }: CtaProps) =>
 
           {/* Medieval action buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
-            <Link
-              href={data.cta[0].link}
-              className="group relative px-12 py-6 bg-gradient-to-b from-amber-700 via-amber-800 to-amber-900 text-amber-50 text-lg font-bold rounded-sm overflow-hidden transition-all duration-300 hover:scale-105 shadow-2xl shadow-amber-900/50 border-2 border-amber-600 font-cinzel tracking-[0.15em]"
-            >
-              <span className="relative z-10 flex items-center gap-4 uppercase">
-                <span>{data.cta[0].emoji}</span>
-                {data.cta[0].text}
-                <span>{data.cta[0].emoji}</span>
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-t from-transparent via-amber-500/20 to-amber-400/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </Link>
-
-            <Link
-              href={data.cta[1].link}
-              className="px-12 py-6 bg-amber-100/80 text-amber-900 text-lg font-bold rounded-sm border-2 border-amber-800/50 backdrop-blur-sm hover:bg-amber-50 hover:border-amber-800 transition-all duration-300 uppercase shadow-xl flex items-center gap-4 font-cinzel tracking-[0.15em]"
-            >
-              <span>{data.cta[1].emoji}</span>
-              {data.cta[1].text}
-              <span>{data.cta[1].emoji}</span>
-            </Link>
+            <CtaButton data={data.cta[0]} type="primary" />
+            <CtaButton data={data.cta[1]} type="secondary" />
           </div>
 
           {/* Medieval seal of guarantee */}

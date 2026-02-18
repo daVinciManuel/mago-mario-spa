@@ -21,7 +21,6 @@ export default function HomePage() {
       <ServiceSection data={serviceSectionData} />
 
       <CtaSection data={ctaSectionData} />
-
     </main>
   );
 }
