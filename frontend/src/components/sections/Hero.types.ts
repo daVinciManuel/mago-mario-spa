@@ -1,4 +1,4 @@
-import { CTAButton } from "@/types/types";
+import { CtaButtonData } from "@/types/types";
 
 interface TrustSeal {
   text: string;
@@ -10,6 +10,6 @@ export interface HeroSectionData {
   title: string;
   subtitle: string;
   subtitle2: string;
-  cta: CTAButton[];
+  cta: CtaButtonData[];
   trustSeals: TrustSeal[];
 }

@@ -1,4 +1,4 @@
-import { CTAButton } from "@/types/types";
+import { CtaButtonData } from "@/types/types";
 
 export interface CtaSectionData {
   icon: string;
@@ -7,7 +7,7 @@ export interface CtaSectionData {
   title2: string;
   description1: string;
   description2: string;
-  cta: CTAButton[];
+  cta: CtaButtonData[];
   microscopy: {
     text: string;
     emoji: string
