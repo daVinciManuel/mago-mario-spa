@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_component_trust_seals",
+  "info": {
+    "displayName": "trust seal"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "default": "+100 Espectáculos",
+      "maxLength": 24
+    },
+    "emoji": {
+      "type": "string",
+      "default": "📜",
+      "maxLength": 2
+    }
+  },
+  "config": {}
+}

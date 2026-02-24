@@ -1,27 +1,30 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "home_pages",
   "info": {
     "singularName": "home-page",
     "pluralName": "home-pages",
-    "displayName": "Home Page"
+    "displayName": "home page"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
+    "portada": {
+      "type": "component",
+      "component": "layout.portada-home",
+      "repeatable": false
     },
-    "description": {
-      "type": "text"
+    "servicios": {
+      "type": "component",
+      "component": "layout.servicios-home",
+      "repeatable": false
     },
-    "hero": {
-      "type": "dynamiczone",
-      "components": [
-        "layout.hero-section"
-      ]
+    "cta": {
+      "type": "component",
+      "component": "layout.cta-home",
+      "repeatable": false
     }
   }
 }

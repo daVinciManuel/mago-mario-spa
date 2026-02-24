@@ -430,10 +430,10 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiHomePageHomePage extends Struct.CollectionTypeSchema {
+export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
-    displayName: 'Home Page';
+    displayName: 'home page';
     pluralName: 'home-pages';
     singularName: 'home-page';
   };
@@ -444,16 +444,16 @@ export interface ApiHomePageHomePage extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    hero: Schema.Attribute.DynamicZone<['layout.hero-section']>;
+    cta: Schema.Attribute.Component<'layout.cta-home', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::home-page.home-page'
     > &
       Schema.Attribute.Private;
+    portada: Schema.Attribute.Component<'layout.portada-home', false>;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
+    servicios: Schema.Attribute.Component<'layout.servicios-home', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

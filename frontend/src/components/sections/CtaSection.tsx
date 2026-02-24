@@ -1,7 +1,7 @@
 import { OldPaperBg } from "../ui/OldPaperBg"
 import { CornersDecoration } from "../ui/CornersDecoration"
-import { CtaSectionData } from "./CtaSection.types"
 import { CtaButton } from "../ui/CtaButton"
+import { CtaSectionData } from "@/types/home"
 interface CtaProps {
   data: CtaSectionData;
 }
@@ -57,8 +57,12 @@ export const CtaSection = ({ data }: CtaProps) =>
 
           {/* Medieval action buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
-            <CtaButton data={data.cta[0]} type="primary" />
-            <CtaButton data={data.cta[1]} type="secondary" />
+            {data.cta.map((btn, index) => (
+              <CtaButton
+                key={index}
+                data={btn}
+                type={index === 0 ? "primary" : "secondary"} />
+            ))}
           </div>
 
           {/* Medieval seal of guarantee */}

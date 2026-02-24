@@ -2,9 +2,8 @@ import { Metadata } from 'next';
 import { HeroSection } from '@/components/sections/Hero'
 import { ServiceSection } from '@/components/sections/Services';
 import { CtaSection } from '@/components/sections/CtaSection';
-import { heroSectionData } from '@/components/sections/Hero.data';
-import { serviceSectionData } from '@/components/sections/Service.data';
-import { ctaSectionData } from '@/components/sections/CtaSection.data';
+import { HOME_MOCK } from '@/constants/mocks/home';
+import { getHomePageData } from '@/services/home-page';
 
 
 export const metadata: Metadata = {
@@ -13,14 +12,26 @@ export const metadata: Metadata = {
 };
 
 
-export default function HomePage() {
+export default async function HomePage() {
+  // const { hero_section, services_section, cta_section } = HOME_MOCK
+  let data;
+  try {
+    data = await getHomePageData();
+    if (!data) {
+      console.warn("Empty res from Strapi. Using Mock");
+      data = HOME_MOCK;
+    }
+  } catch (error) {
+    data = HOME_MOCK;
+    throw error;
+  }
   return (
     <main className="min-h-screen">
-      <HeroSection data={heroSectionData} />
+      <HeroSection data={data.hero_section} />
 
-      <ServiceSection data={serviceSectionData} />
+      <ServiceSection data={data.services_section} />
 
-      <CtaSection data={ctaSectionData} />
+      <CtaSection data={data.cta_section} />
     </main>
   );
 }

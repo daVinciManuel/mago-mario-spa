@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_layout_servicios_homes",
+  "info": {
+    "displayName": "servicios-home"
+  },
+  "options": {},
+  "attributes": {
+    "servicios": {
+      "type": "component",
+      "component": "component.service",
+      "repeatable": true
+    },
+    "titulo": {
+      "type": "string",
+      "default": "Artes & Servicios"
+    }
+  },
+  "config": {}
+}

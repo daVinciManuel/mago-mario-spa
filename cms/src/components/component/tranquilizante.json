@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_component_tranquilizantes",
+  "info": {
+    "displayName": "tranquilizante"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "default": "Respuesta en menos de XXIV horas · Primera consulta sin coste"
+    },
+    "emoji": {
+      "type": "string",
+      "default": "⚔️"
+    }
+  },
+  "config": {}
+}

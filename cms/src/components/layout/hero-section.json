@@ -19,11 +19,6 @@
     },
     "subHeading": {
       "type": "string"
-    },
-    "link": {
-      "type": "component",
-      "component": "component.link",
-      "repeatable": false
     }
   },
   "config": {}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_component_services",
+  "info": {
+    "displayName": "service"
+  },
+  "options": {},
+  "attributes": {
+    "icono": {
+      "type": "string",
+      "default": "🔮"
+    },
+    "titulo": {
+      "type": "string",
+      "default": "Magia de salón",
+      "maxLength": 24
+    },
+    "descripcion": {
+      "type": "text",
+      "default": "Ilusiones que desafían la realidad. Cartas, cuerdas y asombro en cada truco. ¡Magia en vivo increíble!",
+      "maxLength": 150
+    },
+    "link": {
+      "type": "string",
+      "default": "/services/magia",
+      "required": false
+    }
+  },
+  "config": {}
+}

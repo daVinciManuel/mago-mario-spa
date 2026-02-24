@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_component_ctas",
+  "info": {
+    "displayName": "cta",
+    "icon": "typhoon"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string",
+      "maxLength": 22
+    },
+    "emoji": {
+      "type": "string",
+      "default": "🗡️"
+    }
+  },
+  "config": {}
+}

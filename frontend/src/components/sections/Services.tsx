@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { OldPaperBg } from "../ui/OldPaperBg";
-import { ServiceSectionData } from "./Services.types";
+import { ServiceSectionData } from "@/types/home";
 import { CornersDecoration } from "../ui/CornersDecoration";
 
 interface ServiceProps {

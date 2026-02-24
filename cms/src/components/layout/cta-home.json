@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_layout_cta_homes",
+  "info": {
+    "displayName": "cta-home"
+  },
+  "options": {},
+  "attributes": {
+    "icono": {
+      "type": "string",
+      "default": "🔮"
+    },
+    "subtitulo": {
+      "type": "string",
+      "default": "Convocatoria Real",
+      "maxLength": 24
+    },
+    "titulo1": {
+      "type": "string",
+      "default": "¿Quieres Magia"
+    },
+    "titulo2": {
+      "type": "string",
+      "default": "para tu día especial?"
+    },
+    "descripcion1": {
+      "type": "string",
+      "default": "Sea para ceremonias corporativas, celebraciones privadas, o grupos de turistas,"
+    },
+    "descripcion2": {
+      "type": "string",
+      "default": "te aguarda una experiencia que quedará grabada en los anales del tiempo."
+    },
+    "botones": {
+      "type": "component",
+      "component": "component.cta",
+      "repeatable": true,
+      "min": 1,
+      "max": 2
+    },
+    "tranquilizante": {
+      "type": "component",
+      "component": "component.tranquilizante",
+      "repeatable": false,
+      "min": 1,
+      "max": 2
+    }
+  },
+  "config": {}
+}
