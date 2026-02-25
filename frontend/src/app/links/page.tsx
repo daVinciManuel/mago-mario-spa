@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import Image from 'next/image';
 import { OldPaperBg } from "@/components/ui/OldPaperBg";
 import { LINKS_PAGE_MOCK } from '@/constants/mocks/links';
@@ -25,16 +26,18 @@ export default async function LinksPage() {
       <OldPaperBg />
 
       <div className="relative z-10 w-full max-w-md flex flex-col items-center">
-        <div className="relative w-28 h-28 mb-6 rounded-full border-4 border-amber-900/20 p-1 bg-amber-50 shadow-2xl">
-          <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-amber-800">
-            <Image
-              src={data.avatarUrl || "/image/icon/mago.png"}
-              alt={data.title}
-              fill
-              className="object-cover"
-            />
+        <Link href="/">
+          <div className="relative w-28 h-28 mb-6 rounded-full border-4 border-amber-900/20 p-1 bg-amber-50 shadow-2xl">
+            <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-amber-800">
+              <Image
+                src={data.avatarUrl || "/image/icon/mago.png"}
+                alt={data.title}
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
-        </div>
+        </Link>
 
         <h1 className="font-cinzel text-3xl text-amber-950 font-bold mb-2 text-center tracking-tight">
           {data.title}
