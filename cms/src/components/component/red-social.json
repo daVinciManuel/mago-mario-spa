@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_component_red_socials",
+  "info": {
+    "displayName": "redSocial",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "app": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Web Oficial",
+      "enum": [
+        "Instagram",
+        "YouTube",
+        "Facebook",
+        "X",
+        "TikTok",
+        "LinkedIn",
+        "Telegram",
+        "WhatsApp",
+        "BlueSky",
+        "Pinterest",
+        "Threads",
+        "Snapchat",
+        "Reddit",
+        "Wallapop",
+        "Amikumu",
+        "Mia Vivo",
+        "Tienda",
+        "Web Oficial",
+        "otro"
+      ]
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "usuario": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

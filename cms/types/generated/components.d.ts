@@ -17,6 +17,44 @@ export interface ComponentCta extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentRedSocial extends Struct.ComponentSchema {
+  collectionName: 'components_component_red_socials';
+  info: {
+    displayName: 'redSocial';
+    icon: 'user';
+  };
+  attributes: {
+    app: Schema.Attribute.Enumeration<
+      [
+        'Instagram',
+        'YouTube',
+        'Facebook',
+        'X',
+        'TikTok',
+        'LinkedIn',
+        'Telegram',
+        'WhatsApp',
+        'BlueSky',
+        'Pinterest',
+        'Threads',
+        'Snapchat',
+        'Reddit',
+        'Wallapop',
+        'Amikumu',
+        'Mia Vivo',
+        'Tienda',
+        'Web Oficial',
+        'otro',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Web Oficial'>;
+    descripcion: Schema.Attribute.String;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+    usuario: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentService extends Struct.ComponentSchema {
   collectionName: 'components_component_services';
   info: {
@@ -184,6 +222,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'component.cta': ComponentCta;
+      'component.red-social': ComponentRedSocial;
       'component.service': ComponentService;
       'component.tranquilizante': ComponentTranquilizante;
       'component.trust-seal': ComponentTrustSeal;
