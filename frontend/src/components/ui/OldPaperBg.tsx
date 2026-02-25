@@ -6,7 +6,7 @@ export const OldPaperBg = () =>
       src="/textures/bgOldPaper.webp"
       alt=""
       fill
-      quality={70}
+      quality={75}
       priority
       sizes="100vw"
       style={{
