@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 
 
 export default async function HomePage() {
-  // const { hero_section, services_section, cta_section } = HOME_MOCK
   let data;
   try {
     data = await getHomePageData();
@@ -23,7 +22,7 @@ export default async function HomePage() {
     }
   } catch (error) {
     data = HOME_MOCK;
-    throw error;
+    console.warn(error);
   }
   return (
     <main className="min-h-screen">

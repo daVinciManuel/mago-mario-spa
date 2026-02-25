@@ -8,16 +8,12 @@ interface CtaProps {
 export const CtaSection = ({ data }: CtaProps) =>
 (
   <section className="relative py-32 overflow-hidden">
-    {/* Textura de pergamino en CTA */}
     <OldPaperBg></OldPaperBg>
 
-    {/* Overlay para diferenciación sutil */}
     <div className="absolute inset-0 bg-gradient-to-b from-amber-900/10 via-transparent to-amber-900/10"></div>
 
     <div className="relative z-10 max-w-5xl mx-auto px-6">
-      {/* Scroll-like container */}
       <div className="relative bg-amber-100/60 backdrop-blur-md border-4 border-amber-800/50 shadow-2xl p-12 md:p-16">
-        {/* Decorative corners */}
         <CornersDecoration size='big' />
 
         <div className="text-center">

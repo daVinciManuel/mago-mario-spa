@@ -6,12 +6,10 @@ interface HeroProps {
   data: HeroSectionData;
 }
 
-// export const HeroSection = ({ data }: HeroProps) =>
 export function HeroSection({ data }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-      {/* SOLO Textura de papel viejo como fondo */}
       <OldPaperBg></OldPaperBg>
 
       {/* Content */}
@@ -80,7 +78,7 @@ export function HeroSection({ data }: HeroProps) {
 
       </div>
 
-      {/* Scroll indicator - Medieval style */}
+      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
         <div className="text-amber-800 text-2xl">↓</div>
       </div>

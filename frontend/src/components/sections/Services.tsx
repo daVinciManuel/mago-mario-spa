@@ -9,14 +9,11 @@ interface ServiceProps {
 export const ServiceSection = ({ data }: ServiceProps) =>
 (
   <section className="relative py-24">
-    {/* Textura de fondo para servicios */}
     <OldPaperBg></OldPaperBg>
 
-    {/* Overlay muy sutil para diferenciar secciones */}
     <div className="absolute inset-0 bg-amber-900/5"></div>
 
     <div className="relative max-w-7xl mx-auto px-6">
-      {/* Section title with medieval ornaments */}
       <div className="text-center mb-16">
         <div className="flex items-center justify-center gap-4 mb-6">
           <span className="text-amber-800 text-3xl">✦</span>
@@ -36,7 +33,6 @@ export const ServiceSection = ({ data }: ServiceProps) =>
             key={index}
             className="group relative bg-amber-50/70 backdrop-blur-sm rounded-none p-8 border-2 border-amber-800/30 hover:border-amber-800/60 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-900/40"
           >
-            {/* Medieval corner decorations */}
             <CornersDecoration size='small' />
 
             <div className="text-5xl mb-6 text-center">{service.icon}</div>
