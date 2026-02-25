@@ -3,7 +3,7 @@ import qs from "qs";
 import { LinksPageData } from "@/types/links";
 export async function getLinksPageData(): Promise<LinksPageData> {
   const queryString = qs.stringify({
-    populate: ["avatar", "Redes"]
+    populate: ["avatar", "redes"]
   }, { encodeValuesOnly: true })
 
   const response = await query(`links-page?${queryString}`);
@@ -16,7 +16,7 @@ export async function getLinksPageData(): Promise<LinksPageData> {
     links: raw.redes.map((r: any) => ({
       app: r.app,
       link: r.link,
-      user: r.user,
+      user: r.usuario,
       description: r.descripcion
     }))
   }

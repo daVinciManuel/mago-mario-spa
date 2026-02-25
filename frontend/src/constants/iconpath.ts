@@ -1,0 +1,20 @@
+export const ICON_PATHS: Record<string, string> = {
+  "Instagram": "/image/icon/app/instagram.png",
+  "Facebook": "/image/icon/apps/facebook.png",
+  "Apple Music": "/image/icon/apps/applemusic.png",
+  "LinkedIn": "/image/icon/apps/linkedin.png",
+  "Tidal": "/image/icon/apps/tidal.png",
+  "Pinterest": "/image/icon/apps/pinterest.png",
+  "Reddit": "/image/icon/apps/reddit.png",
+  "Snapchat": "/image/icon/apps/snapchat.png",
+  "SoundCloud": "/image/icon/apps/soundcloud.png",
+  "Spotify": "/image/icon/apps/spotify.png",
+  "Telegram": "/image/icon/apps/telegram.png",
+  "Threads": "/image/icon/apps/threads.png",
+  "TikTok": "/image/icon/apps/tiktok.png",
+  "WhatsApp": "/image/icon/apps/whatsapp.png",
+  "X": "/image/icon/apps/x.png",
+  "YouTube Music": "/image/icon/apps/youtubemusic.png",
+  "YouTube": "/image/icon/apps/youtube.png",
+  "default": "/image/icon/apps/world-wide-web.png"
+}
