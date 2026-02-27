@@ -1,5 +1,5 @@
 export const ICON_PATHS: Record<string, string> = {
-  "Instagram": "/image/icon/app/instagram.png",
+  "Instagram": "/image/icon/apps/instagram.png",
   "Facebook": "/image/icon/apps/facebook.png",
   "Apple Music": "/image/icon/apps/applemusic.png",
   "LinkedIn": "/image/icon/apps/linkedin.png",
