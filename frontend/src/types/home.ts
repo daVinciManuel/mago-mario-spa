@@ -27,6 +27,7 @@ interface service {
   title: string;
   description: string;
   link: string;
+  image: string;
 }
 export interface ServiceSectionData {
   title: string;
