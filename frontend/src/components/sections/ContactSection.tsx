@@ -13,35 +13,29 @@ const SERVICES = [
   'No lo tengo claro aún',
 ]
 
-const PHONE_PARTS = ['+34', '123', '456', '789'];
-
-const getPhone = () => PHONE_PARTS.join(' ');
-
-const getPhoneLink = () => `tel:${PHONE_PARTS.join('')}`;
-
 export const ContactSection = () => {
   const [state, handleSubmit] = useForm('meedonda')
 
   return (
-    <section id="contacto" className="relative py-24 overflow-hidden">
+    <section id="contacto" className="relative pt-8 pb-24 overflow-hidden">
       <OldPaperBg />
       <div className="absolute inset-0 bg-gradient-to-b from-amber-900/10 via-transparent to-amber-900/10"></div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
 
         {/* Back to home */}
-        <div className="mb-10">
+        <div className="mb-8">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 font-cinzel text-xs uppercase tracking-widest text-amber-800 border border-amber-800/40 px-4 py-2 hover:bg-amber-800/10 hover:border-amber-800 transition-colors"
+            className="inline-flex items-center gap-3 bg-amber-900 hover:bg-amber-800 active:bg-amber-950 text-amber-50 font-cinzel font-bold text-xs uppercase tracking-widest px-5 py-3 transition-colors duration-200 shadow-md"
           >
-            <span>←</span>
+            <span className="text-base leading-none">←</span>
             <span>Volver al inicio</span>
           </Link>
         </div>
 
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <div className="inline-flex items-center gap-4 mb-6">
             <span className="text-amber-800 text-3xl">⚜️</span>
             <span className="text-amber-900/80 text-sm font-crimson tracking-[0.3em] uppercase border-t border-b border-amber-800/50 px-6 py-2 bg-amber-50/30 backdrop-blur-sm">
@@ -66,15 +60,15 @@ export const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 items-start">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 items-start">
 
-          {/* Contact info sidebar */}
-          <div className="space-y-4">
+          {/* Contact info sidebar — shown below form on mobile, left on desktop */}
+          <div className="space-y-3 md:space-y-4 order-2 md:order-1">
             {[
               {
                 emoji: '🏰',
                 title: 'Zona de actuación',
-                text: 'Comunidad de Madrid y provincia de Ávila. Consulta disponibilidad para otras provincias.',
+                text: 'Toda España.',
               },
               {
                 emoji: '⏳',
@@ -89,8 +83,8 @@ export const ContactSection = () => {
               {
                 emoji: '🕯️',
                 title: 'Teléfono',
-                text: getPhone(),
-                link: getPhoneLink(),
+                text: '+34 123 456 789',
+                link: 'tel:+34123456789',
               },
             ].map((item, i) => (
               <div key={i} className="relative bg-amber-50/60 border border-amber-800/30 p-5">
@@ -108,8 +102,8 @@ export const ContactSection = () => {
           </div>
 
           {/* Form */}
-          <div className="md:col-span-2">
-            <div className="relative bg-amber-100/60 backdrop-blur-md border-4 border-amber-800/50 shadow-2xl p-8 md:p-10">
+          <div className="md:col-span-2 order-1 md:order-2">
+            <div className="relative bg-amber-100/60 backdrop-blur-md border-4 border-amber-800/50 shadow-2xl p-6 md:p-10">
               <CornersDecoration size='big' />
 
               {state.succeeded ? (
