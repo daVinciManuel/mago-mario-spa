@@ -13,6 +13,12 @@ const SERVICES = [
   'No lo tengo claro aún',
 ]
 
+const PHONE_PARTS = ['+34', '123', '456', '789'];
+
+const getPhone = () => PHONE_PARTS.join(' ');
+
+const getPhoneLink = () => `tel:${PHONE_PARTS.join('')}`;
+
 export const ContactSection = () => {
   const [state, handleSubmit] = useForm('meedonda')
 
@@ -83,8 +89,8 @@ export const ContactSection = () => {
               {
                 emoji: '🕯️',
                 title: 'Teléfono',
-                text: '+34 123 456 789',
-                link: 'tel:+34123456789',
+                text: getPhone(),
+                link: getPhoneLink(),
               },
             ].map((item, i) => (
               <div key={i} className="relative bg-amber-50/60 border border-amber-800/30 p-5">
