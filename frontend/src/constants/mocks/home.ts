@@ -10,7 +10,7 @@ export const HOME_MOCK: HomePageData = {
       {
         link: '/contact',
         text: 'Reservar evento',
-        emoji: '🗡️',
+        emoji: '',
       },
       {
         link: '#servicios',

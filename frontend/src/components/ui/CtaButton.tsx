@@ -13,11 +13,17 @@ export function CtaButton({ data, type }: Props) {
           href={data.link}
           className="group relative px-12 py-6 bg-gradient-to-b from-amber-700 via-amber-800 to-amber-900 text-amber-50 text-lg font-bold rounded-sm overflow-hidden transition-all duration-300 hover:scale-105 shadow-2xl shadow-amber-900/50 border-2 border-amber-600 font-cinzel tracking-[0.15em]"
         >
-          <span className="relative z-10 flex items-center gap-4 uppercase">
-            <span>{data.emoji}</span>
-            {data.text}
-            <span>{data.emoji}</span>
-          </span>
+          {data.emoji === '' ? (
+            <span className="uppercase">
+              {data.text}
+            </span>
+          ) : (
+            <span className="relative z-10 flex items-center gap-4 uppercase">
+              <span>{data.emoji}</span>
+              {data.text}
+              <span>{data.emoji}</span>
+            </span>
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-transparent via-amber-500/20 to-amber-400/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         </Link>
       ) :
