@@ -13,11 +13,10 @@ export const HOME_MOCK: HomePageData = {
         emoji: '🗡️',
       },
       {
-        link: '#servicios',
-        text: 'Ver servicios',
+        link: '/services',
+        text: 'consultar servicios',
         emoji: '',
-      },
-    ],
+      },],
     trustSeals: [
       {
         text: '+100 Espectáculos',
@@ -28,7 +27,7 @@ export const HOME_MOCK: HomePageData = {
         emoji: '📜'
       },
       {
-        text: 'Madrid · Ávila',
+        text: 'Comunidad de Madrid',
         emoji: '🏰'
       }
     ],
@@ -38,28 +37,22 @@ export const HOME_MOCK: HomePageData = {
     subtitle: 'Del Grimorio de Conocimientos Ancestrales',
     services: [
       {
-        icon: '🤲',
-        title: 'Magia de Cerca',
-        description: 'Ilusiones imposibles a centímetros de tus manos. Cartas, monedas y objetos cotidianos cobran vida. La magia más íntima y asombrosa.',
-        link: '#contacto',
-      },
-      {
-        icon: '🎭',
-        title: 'Magia de Escena',
-        description: 'Espectáculos de gran formato para teatros, auditorios y eventos corporativos. Ilusiones que dejan sin aliento a cientos de espectadores.',
-        link: '#contacto',
+        icon: '⚔️',
+        title: 'Cuentacuentos',
+        description: 'Descubre mundos mágicos. Historias que cautivan a niños y adultos. ¡Magia para toda la familia!',
+        link: '/services/cuentacuentos',
       },
       {
         icon: '🔮',
-        title: 'Magia de Salón',
-        description: 'El ambiente perfecto para bodas, celebraciones privadas y reuniones exclusivas. Magia íntima que convierte cada mesa en un escenario.',
-        link: '#contacto',
+        title: 'Magia de salón',
+        description: 'Ilusiones que desafían la realidad. Cartas, cuerdas y asombro en cada truco. ¡Magia en vivo increíble!',
+        link: '/services/magia',
       },
       {
-        icon: '🎵',
+        icon: '📜',
         title: '12 Encantamientos',
-        description: '12 melodías que acarician el alma. Un concierto íntimo con esencia bossa nova donde la música y la magia se funden en una sola experiencia.',
-        link: '#contacto',
+        description: '12 melodías que acarician el alma. Ritmos suaves con esencia bossa nova. Relájate y déjate envolver.',
+        link: '/services/workshops',
       },
     ]
   },
@@ -73,17 +66,17 @@ export const HOME_MOCK: HomePageData = {
     cta: [
       {
         link: '/contact',
-        text: 'Solicitar presupuesto',
+        text: 'Consulta',
         emoji: '📜',
       },
       {
         link: 'tel:+34123456789',
-        text: 'Llamar ahora',
+        text: 'Invócale',
         emoji: '🕯️',
       }
     ],
     microscopy: {
-      text: 'Respuesta en menos de 24 horas · Primera consulta sin coste',
+      text: 'Respuesta en menos de XXIV horas · Primera consulta sin coste',
       emoji: '⚔️'
     }
   }
