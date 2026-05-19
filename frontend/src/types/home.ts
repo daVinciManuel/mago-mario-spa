@@ -28,6 +28,7 @@ interface service {
   description: string;
   link: string;
   image: string;
+  objectPosition?: string;
 }
 export interface ServiceSectionData {
   title: string;

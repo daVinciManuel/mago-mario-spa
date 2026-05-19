@@ -38,7 +38,8 @@ export const ServiceSection = ({ data }: ServiceProps) => (
             src={service.image}
             alt={service.title}
             fill
-            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            style={{ objectPosition: service.objectPosition ?? 'center center' }}
             sizes="100vw"
           />
 

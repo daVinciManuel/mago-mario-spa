@@ -43,6 +43,7 @@ export const HOME_MOCK: HomePageData = {
         description: 'Ilusiones imposibles a centímetros de tus manos. Cartas, monedas y objetos cotidianos cobran vida. La magia más íntima y asombrosa.',
         link: 'contacto',
         image: '/image/service/magia-cerca.jpg',
+        objectPosition: 'center 27%',
       },
       {
         icon: '🎭',
@@ -50,6 +51,7 @@ export const HOME_MOCK: HomePageData = {
         description: 'Espectáculos de gran formato para teatros, auditorios y eventos corporativos. Ilusiones que dejan sin aliento a cientos de espectadores.',
         link: 'contacto',
         image: '/image/service/magia-escena.jpg',
+        objectPosition: 'center 20%',
       },
       {
         icon: '🔮',
@@ -57,6 +59,7 @@ export const HOME_MOCK: HomePageData = {
         description: 'El ambiente perfecto para bodas, celebraciones privadas y reuniones exclusivas. Magia íntima que convierte cada mesa en un escenario.',
         link: 'contacto',
         image: '/image/service/magia-salon.jpg',
+        objectPosition: 'center 10%',
       },
       {
         icon: '🎵',
@@ -64,6 +67,7 @@ export const HOME_MOCK: HomePageData = {
         description: '12 melodías que acarician el alma. Un concierto íntimo con esencia bossa nova donde la música y la magia se funden en una sola experiencia.',
         link: 'contacto',
         image: '/image/service/encantamientos.jpg',
+        objectPosition: 'center 7%',
       },
     ]
   },
