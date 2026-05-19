@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${cinzel.variable} ${crimsonText.variable}`}>
+    <html lang="es" className={`${cinzel.variable} ${crimsonText.variable} scroll-smooth`}>
       <body className={crimsonText.className}>
         {children}
       </body>
