@@ -13,7 +13,7 @@ export default defineConfig({
 
   plugins: [structureTool(), visionTool(), presentationTool({
     previewUrl: {
-      origin: 'https://magomario.netlify.app/',
+      origin: 'https://preview--magomario.netlify.app/',
       previewMode: {
         enable: 'api/draft-mode/enable'
       }
