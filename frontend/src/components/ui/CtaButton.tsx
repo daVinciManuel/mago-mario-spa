@@ -13,7 +13,7 @@ export function CtaButton({ data, type }: Props) {
           href={data.link}
           className="group relative px-12 py-6 bg-gradient-to-b from-amber-700 via-amber-800 to-amber-900 text-amber-50 text-lg font-bold rounded-sm overflow-hidden transition-all duration-300 hover:scale-105 shadow-2xl shadow-amber-900/50 border-2 border-amber-600 font-cinzel tracking-[0.15em]"
         >
-          {data.emoji === '' ? (
+          {!data.emoji ? (
             <span className="uppercase">
               {data.text}
             </span>

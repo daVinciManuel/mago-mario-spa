@@ -1,23 +1,24 @@
-import { query } from "@/lib/strapi";
-import qs from "qs";
-import { LinksPageData } from "@/types/links";
-export async function getLinksPageData(): Promise<LinksPageData> {
-  const queryString = qs.stringify({
-    populate: ["avatar", "redes"]
-  }, { encodeValuesOnly: true })
+import { sanityFetch } from '@/lib/sanity'
+import { LinksPageData } from '@/types/links'
 
-  const response = await query(`links-page?${queryString}`);
-  const raw = response.data
-
-  return {
-    title: raw.titulo,
-    description: raw.descripcion,
-    avatarUrl: raw.avatarUrl?.url,
-    links: raw.redes.map((r: any) => ({
-      app: r.app,
-      link: r.link,
-      user: r.usuario,
-      description: r.descripcion
-    }))
+const LINKS_PAGE_QUERY = `
+  *[_type == "linksPage"][0] {
+    title,
+    description,
+    "avatarUrl": avatar.asset->url,
+    links[] {
+      app,
+      link,
+      user,
+      description
+    }
   }
+`
+
+export async function getLinksPageData(): Promise<LinksPageData> {
+  const { data } = await sanityFetch({ query: LINKS_PAGE_QUERY })
+
+  if (!data) throw new Error('No linksPage document found in Sanity')
+
+  return data as LinksPageData
 }

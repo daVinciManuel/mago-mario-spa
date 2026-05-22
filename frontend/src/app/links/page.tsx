@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { OldPaperBg } from "@/components/ui/OldPaperBg";
+import { OldPaperBg } from '@/components/ui/OldPaperBg';
 import { LINKS_PAGE_MOCK } from '@/constants/mocks/links';
 import { getLinksPageData } from '@/services/links-page';
 import { LinksSection } from '@/components/sections/LinksSection';
@@ -15,10 +15,9 @@ export default async function LinksPage() {
   let data;
   try {
     data = await getLinksPageData();
-    if (!data) data = LINKS_PAGE_MOCK;
   } catch (error) {
+    console.warn('Sanity fetch failed, falling back to mock:', error);
     data = LINKS_PAGE_MOCK;
-    console.warn(error)
   }
 
   return (
@@ -30,7 +29,7 @@ export default async function LinksPage() {
           <div className="relative w-28 h-28 mb-6 rounded-full border-4 border-amber-900/20 p-1 bg-amber-50 shadow-2xl">
             <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-amber-800">
               <Image
-                src={data.avatarUrl || "/image/icon/mago.png"}
+                src={data.avatarUrl || '/image/icon/mago.png'}
                 alt={data.title}
                 fill
                 className="object-cover"
@@ -47,12 +46,11 @@ export default async function LinksPage() {
         </p>
 
         <div className="w-full flex flex-col gap-4">
-          <LinksSection links={data.links}></LinksSection>
+          <LinksSection links={data.links} />
         </div>
 
-        {/* Footer con el toque de profesor de esperanto */}
         <footer className="mt-16 flex flex-col items-center gap-2 opacity-40">
-          <div className="h-px w-12 bg-amber-900"></div>
+          <div className="h-px w-12 bg-amber-900" />
           <p className="font-crimson text-xs text-amber-950 tracking-[0.2em] uppercase">
             Madrido · MMXXVI
           </p>
