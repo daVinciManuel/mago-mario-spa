@@ -1,8 +1,6 @@
 import { ContactPageData } from "@/types/contact";
 
 export const CONTACT_MOCK: ContactPageData = {
-  title: 'Contacta al mago',
-  description: 'Describe tu evento y recibirás respuesta en menos de 24 horas. La primera consulta es siempre sin coste.',
   services: [
     'Magia de Cerca',
     'Magia de Escena',
@@ -27,10 +25,10 @@ export const CONTACT_MOCK: ContactPageData = {
       text: 'Sin compromiso y sin coste. Cuéntanos tu evento.',
     },
     {
-      emoji: '📞',
+      emoji: '🕯️',
       title: 'Teléfono',
-      text: '+34 675 639 191',
-      link: 'tel:+34675639191',
+      text: '+34 123 456 789',
+      link: 'tel:+34123456789',
     },
   ]
 }

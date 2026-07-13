@@ -1,7 +1,5 @@
 // CONTACT PAGE
 export interface ContactPageData {
-  title: string;
-  description: string;
   services: string[];
   trustSeals: TrustSeal[];
 }
