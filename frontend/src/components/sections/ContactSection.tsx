@@ -4,17 +4,17 @@ import Link from 'next/link'
 import { useForm, ValidationError } from '@formspree/react'
 import { OldPaperBg } from '../ui/OldPaperBg'
 import { CornersDecoration } from '../ui/CornersDecoration'
-import { ContactPageData } from '@/types/contact'
 
-interface ContactProps {
-  data: ContactPageData;
-}
+const SERVICES = [
+  'Magia de Cerca',
+  'Magia de Escena',
+  'Magia de Salón',
+  '12 Encantamientos / Concierto',
+  'No lo tengo claro aún',
+]
 
-export const ContactSection = ({ data }: ContactProps) => {
+export const ContactSection = () => {
   const [state, handleSubmit] = useForm('meedonda')
-  // data
-  const SERVICES = data.services;
-  const TRUSTS_SEALS = data.trustSeals;
 
   return (
     <section id="contacto" className="relative pt-8 pb-24 overflow-hidden">
@@ -64,7 +64,29 @@ export const ContactSection = ({ data }: ContactProps) => {
 
           {/* Contact info sidebar — shown below form on mobile, left on desktop */}
           <div className="space-y-3 md:space-y-4 order-2 md:order-1">
-            {TRUSTS_SEALS.map((item, i) => (
+            {[
+              {
+                emoji: '🏰',
+                title: 'Zona de actuación',
+                text: 'Toda España.',
+              },
+              {
+                emoji: '⏳',
+                title: 'Respuesta',
+                text: 'En menos de 24 horas en días laborables.',
+              },
+              {
+                emoji: '📜',
+                title: 'Primera consulta',
+                text: 'Sin compromiso y sin coste. Cuéntanos tu evento.',
+              },
+              {
+                emoji: '🕯️',
+                title: 'Teléfono',
+                text: '+34 123 456 789',
+                link: 'tel:+34123456789',
+              },
+            ].map((item, i) => (
               <div key={i} className="relative bg-amber-50/60 border border-amber-800/30 p-5">
                 <div className="text-2xl mb-2">{item.emoji}</div>
                 <p className="font-cinzel text-xs font-bold text-amber-950 mb-1 uppercase tracking-wider">{item.title}</p>
