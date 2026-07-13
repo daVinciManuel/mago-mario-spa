@@ -1,6 +1,7 @@
 import { ctaButton, trustSeal, microscopy } from './objects'
 import { homePage } from './homePage'
 import { linksPage } from './linksPage'
+import { contactPage } from './contactPage'
 
 export const schemaTypes = [
   // Shared objects (must be registered before documents that reference them)
@@ -11,4 +12,5 @@ export const schemaTypes = [
   // Singleton documents
   homePage,
   linksPage,
+  contactPage,
 ]

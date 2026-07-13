@@ -13,6 +13,8 @@ interface ContactProps {
 export const ContactSection = ({ data }: ContactProps) => {
   const [state, handleSubmit] = useForm('meedonda')
   // data
+  const PAGE_TITLE = data.title;
+  const DESCRIPTION = data.description;
   const SERVICES = data.services;
   const TRUSTS_SEALS = data.trustSeals;
 
@@ -45,7 +47,7 @@ export const ContactSection = ({ data }: ContactProps) => {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold text-amber-950 font-cinzel mb-6" style={{ fontVariant: 'small-caps' }}>
-            Contacta al Mago
+            {PAGE_TITLE}
           </h1>
 
           <div className="flex items-center justify-center gap-4 mb-6">
@@ -55,8 +57,7 @@ export const ContactSection = ({ data }: ContactProps) => {
           </div>
 
           <p className="text-xl text-amber-900/80 max-w-2xl mx-auto font-crimson italic">
-            Describe tu evento y recibirás respuesta en menos de 24 horas.
-            La primera consulta es siempre sin coste.
+            {DESCRIPTION}
           </p>
         </div>
 
