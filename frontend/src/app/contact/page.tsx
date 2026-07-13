@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { ContactSection } from '@/components/sections/ContactSection'
+import { CONTACT_MOCK } from '@/constants/mocks/contact';
 
 export const metadata: Metadata = {
   title: 'Contacto | El Gran Mario Wenceslao — Mago en Madrid y Ávila',
@@ -7,9 +8,10 @@ export const metadata: Metadata = {
 }
 
 export default function ContactPage() {
+  const data = CONTACT_MOCK;
   return (
     <main className="min-h-screen">
-      <ContactSection />
+      <ContactSection data={data} />
     </main>
   )
 }
