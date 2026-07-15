@@ -1,7 +1,7 @@
 import Image from 'next/image';
-export const OldPaperBg = () =>
+export const OldPaperBg = ({ className = "", ...props }: { className?: string }) =>
 (
-  <div className="absolute inset-0">
+  <div className={`absolute inset-0 ${className}`} {...props}>
     <Image
       src="/textures/bgOldPaper.webp"
       alt=""
@@ -16,4 +16,3 @@ export const OldPaperBg = () =>
     />
   </div>
 )
-

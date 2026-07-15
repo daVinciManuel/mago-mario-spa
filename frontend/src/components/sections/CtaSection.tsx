@@ -1,76 +1,65 @@
-import { OldPaperBg } from "../ui/OldPaperBg"
-import { CornersDecoration } from "../ui/CornersDecoration"
+// src/components/sections/CtaSection.tsx
+import { OldPaperBg } from '../ui/OldPaperBg';
 import { CtaButton } from "../ui/CtaButton"
 import { CtaSectionData } from "@/types/home"
 interface CtaProps {
   data: CtaSectionData;
 }
-export const CtaSection = ({ data }: CtaProps) =>
-(
-  <section className="relative py-32 overflow-hidden">
-    <OldPaperBg></OldPaperBg>
+export function CtaSection({ data }: CtaProps) {
+  return (
+    <section className="relative py-24 md:py-32 bg-[#1a1208] overflow-hidden">
+      <OldPaperBg />
+      <div
+        className="absolute inset-0 z-[1] pointer-events-none"
+        style={{
+          background: `
+            linear-gradient(
+              105deg,
+              rgba(15, 8, 2, 0.82) 0%,
+              rgba(20, 10, 3, 0.75) 38%,
+              rgba(25, 12, 4, 0.45) 60%,
+              rgba(15, 8, 2, 0.65) 100%
+            )
+          `,
+        }}
+      />
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
+        {/* Outer frame: gilt-toned gradient border, sharp-ish corners like a document, not a UI card */}
+        <div className="relative p-[5px] rounded-sm bg-gradient-to-br from-amber-700/50 via-amber-500/25 to-amber-900/50 shadow-2xl shadow-black/50">
+          <div className="relative bg-[#f8f1e3] rounded-[2px] p-12 md:p-16 ring-1 ring-inset ring-amber-950/20">
+            <OldPaperBg className="absolute inset-0 z-0 opacity-90 rounded-[2px]" />
 
-    <div className="absolute inset-0 bg-gradient-to-b from-amber-900/10 via-transparent to-amber-900/10"></div>
+            {/* Inner ruled line, inset from the edge — the "certificate" cue */}
+            <div className="absolute inset-3 md:inset-4 border border-amber-800/25 pointer-events-none z-[1]" />
 
-    <div className="relative z-10 max-w-5xl mx-auto px-6">
-      <div className="relative bg-amber-100/60 backdrop-blur-md border-4 border-amber-800/50 shadow-2xl p-12 md:p-16">
-        <CornersDecoration size='big' />
-
-        <div className="text-center">
-          {/* Medieval icon */}
-          <div className="mb-8 inline-block">
-            <div className="relative w-24 h-24 mx-auto">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-b from-amber-700 to-amber-900"></div>
-              <div className="absolute inset-2 rounded-full bg-amber-100 flex items-center justify-center">
-                <span className="text-4xl">{data.icon}</span>
+            <div className="relative z-10 text-center">
+              <p className="font-cinzel uppercase tracking-[4px] text-amber-800 text-sm mb-3">
+                {data.subtitle}
+              </p>
+              <h2 className="font-cinzel text-4xl md:text-5xl leading-none text-amber-950 mb-8">
+                {data.title1}<br />{data.title2}
+              </h2>
+              <p className="max-w-2xl mx-auto text-amber-900/90 text-lg leading-relaxed mb-10">
+                {data.description1} {data.description2}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                {data.cta.map((btn, i) => (
+                  <CtaButton
+                    key={i}
+                    data={btn}
+                    type={i === 0 ? "primary" : "secondary"}
+                  />
+                ))}
               </div>
+              {data.microscopy && (
+                <p className="mt-10 text-amber-800/70 text-sm font-crimson">
+                  {data.microscopy.emoji} {data.microscopy.text}
+                </p>
+              )}
             </div>
-          </div>
-
-          <h2 className="text-4xl md:text-6xl font-bold text-amber-950 mb-6 font-cinzel">
-            <span className="block text-2xl md:text-3xl text-amber-800 mb-3 tracking-[0.2em]" style={{ fontVariant: 'small-caps' }}>
-              {data.subtitle}
-            </span>
-            <span className="block">{data.title1}</span>
-            <span className="block text-amber-900">
-              {data.title2}
-            </span>
-          </h2>
-
-          {/* Medieval decorative divider */}
-          <div className="flex items-center justify-center gap-4 my-8">
-            <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-amber-800 to-transparent"></div>
-            <span className="text-amber-800 md:text-2xl">⚜️</span>
-            <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-amber-800 to-transparent"></div>
-          </div>
-
-          <p className="text-xl md:text-2xl text-amber-950/90 mb-12 max-w-3xl mx-auto font-crimson leading-relaxed">
-            {data.description1}
-            <span className="block mt-4 italic text-amber-900/90">
-              {data.description2}
-            </span>
-          </p>
-
-          {/* Medieval action buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
-            {data.cta.map((btn, index) => (
-              <CtaButton
-                key={index}
-                data={btn}
-                type={index === 0 ? "primary" : "secondary"} />
-            ))}
-          </div>
-
-          {/* Medieval seal of guarantee */}
-          <div className="mt-12 pt-8 border-t border-amber-800/40">
-            <p className="text-amber-900/80 text-sm font-crimson italic flex items-center justify-center gap-3">
-              <span>{data.microscopy.emoji}</span>
-              <span>{data.microscopy.text}</span>
-              <span>{data.microscopy.emoji}</span>
-            </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  );
+}

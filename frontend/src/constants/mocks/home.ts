@@ -72,7 +72,7 @@ export const HOME_MOCK: HomePageData = {
     ]
   },
   cta_section: {
-    icon: '🔮',
+    icon: '',
     subtitle: 'Convocatoria Real',
     title1: '¿Quieres Magia',
     title2: 'para tu día especial?',
@@ -82,17 +82,17 @@ export const HOME_MOCK: HomePageData = {
       {
         link: '/contact',
         text: 'Solicitar presupuesto',
-        emoji: '📜',
+        emoji: '',
       },
       {
         link: 'tel:+34123456789',
         text: 'Llamar ahora',
-        emoji: '🕯️',
+        emoji: '',
       }
     ],
     microscopy: {
       text: 'Respuesta en menos de 24 horas · Primera consulta sin coste',
-      emoji: '⚔️'
+      emoji: ''
     }
   }
 }
