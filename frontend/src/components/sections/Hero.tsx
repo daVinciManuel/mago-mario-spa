@@ -9,11 +9,15 @@ interface HeroProps {
 
 export function HeroSection({ data }: HeroProps) {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      <OldPaperBg />
+    <section
+      aria-labelledby="hero-heading"
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
+      <OldPaperBg aria-hidden="true" />
 
       {/* ── Deep atmospheric overlay — ensures text always readable ── */}
       <div
+        aria-hidden="true"
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
           background: `
@@ -30,6 +34,7 @@ export function HeroSection({ data }: HeroProps) {
 
       {/* ── Secondary vignette — edge darkness ── */}
       <div
+        aria-hidden="true"
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
           background:
@@ -38,12 +43,12 @@ export function HeroSection({ data }: HeroProps) {
       />
 
       {/* ── Manuscript ruled lines ── */}
-      <div className="absolute top-2 left-0 right-0 z-[2] h-px bg-amber-600/20 pointer-events-none" />
-      <div className="absolute bottom-10 left-0 right-0 z-[2] h-px bg-amber-600/20 pointer-events-none" />
+      <div aria-hidden="true" className="absolute top-2 left-0 right-0 z-[2] h-px bg-amber-600/20 pointer-events-none" />
+      <div aria-hidden="true" className="absolute bottom-10 left-0 right-0 z-[2] h-px bg-amber-600/20 pointer-events-none" />
 
       {/* ── Vertical ornament lines, flanking the content ── */}
-      <div className="absolute left-6 top-20 bottom-20 z-[2] w-px bg-gradient-to-b from-transparent via-amber-700/30 to-transparent pointer-events-none hidden lg:block" />
-      <div className="absolute right-6 top-20 bottom-20 z-[2] w-px bg-gradient-to-b from-transparent via-amber-700/30 to-transparent pointer-events-none hidden lg:block" />
+      <div aria-hidden="true" className="absolute left-6 top-20 bottom-20 z-[2] w-px bg-gradient-to-b from-transparent via-amber-700/30 to-transparent pointer-events-none hidden lg:block" />
+      <div aria-hidden="true" className="absolute right-6 top-20 bottom-20 z-[2] w-px bg-gradient-to-b from-transparent via-amber-700/30 to-transparent pointer-events-none hidden lg:block" />
 
       {/* ── Main content grid ── */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16 py-28 md:py-24">
@@ -51,7 +56,7 @@ export function HeroSection({ data }: HeroProps) {
 
           {/* ── LEFT: Text content ── */}
           <div>
-            {/* Top banner - cleaner and more elegant */}
+            {/* Top banner */}
             <div className="absolute top-6 sm:top-8 left-1/2 -translate-x-1/2 z-20">
               <p className="font-cinzel text-xs sm:text-sm tracking-[0.35em] uppercase text-amber-200/75 border-t border-b border-amber-700/50 text-center sm:px-10 py-2">
                 MAGO · MÚSICO
@@ -68,6 +73,7 @@ export function HeroSection({ data }: HeroProps) {
               </p>
 
               <h1
+                id="hero-heading"
                 className="font-cinzel font-black leading-none select-none"
                 style={{
                   fontSize: "clamp(3.2rem, 8.5vw, 7.5rem)",
@@ -80,14 +86,15 @@ export function HeroSection({ data }: HeroProps) {
               </h1>
             </div>
 
-            {/* Divider */}
-            <div className="flex items-center gap-3 mb-10 md:mb-12">
+            {/* Divider — purely decorative */}
+            <div aria-hidden="true" className="flex items-center gap-3 mb-10 md:mb-12">
               <div className="h-px w-10 bg-amber-600/70" />
               <svg
                 width="14"
                 height="14"
                 viewBox="0 0 14 14"
                 fill="none"
+                focusable="false"
                 className="text-amber-500 flex-shrink-0"
               >
                 <path
@@ -115,7 +122,7 @@ export function HeroSection({ data }: HeroProps) {
               style={{
                 fontSize: "clamp(1rem, 1.8vw, 1.2rem)",
                 maxWidth: "42ch",
-                color: "#c9a96e99",
+                color: "#dcb98a", // was #c9a96e99 (~2.9:1) — lightened + full opacity, now ~10.7:1
               }}
             >
               {data.subtitle2}
@@ -138,25 +145,23 @@ export function HeroSection({ data }: HeroProps) {
                 <div
                   key={index}
                   className="flex items-center gap-2 font-crimson text-sm"
-                  style={{ color: "#b8956a99" }}
+                  style={{ color: "#dcb98a" }} // was #b8956a99 (~2.6:1), now ~10.7:1
                 >
-                  <span className="text-amber-600/70 text-[10px]">◆</span>
+                  <span aria-hidden="true" className="text-amber-600/70 text-[10px]">◆</span>
                   <span>{obj.text}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* ── RIGHT: Logo sigil ── */}
-          <div className="hidden lg:flex flex-col items-center justify-center select-none">
-            {/* Outer glow ring */}
+          {/* ── RIGHT: Logo sigil — fully decorative, hide the whole block ── */}
+          <div aria-hidden="true" className="hidden lg:flex flex-col items-center justify-center select-none">
             <div
               className="relative flex items-center justify-center"
               style={{
                 filter: "drop-shadow(0 0 40px rgba(180,110,30,0.25))",
               }}
             >
-              {/* Decorative circle border */}
               <div
                 className="absolute rounded-full border border-amber-700/25"
                 style={{ width: 320, height: 320 }}
@@ -165,8 +170,6 @@ export function HeroSection({ data }: HeroProps) {
                 className="absolute rounded-full border border-amber-600/15"
                 style={{ width: 360, height: 360 }}
               />
-
-              {/* Subtle radial glow behind logo */}
               <div
                 className="absolute rounded-full pointer-events-none"
                 style={{
@@ -177,8 +180,7 @@ export function HeroSection({ data }: HeroProps) {
                 }}
               />
 
-              {/* The logo — inverted to gold-ish on dark */}
-              {/* THE LOGO IS INVISIBLE */}
+              {/* THE LOGO IS INVISIBLE — separate bug worth a look, unrelated to a11y */}
               <div
                 className="relative invisible"
                 style={{
@@ -191,7 +193,7 @@ export function HeroSection({ data }: HeroProps) {
               >
                 <Image
                   src="/marioLogo.jpg"
-                  alt="Mario Wenceslao sigil"
+                  alt=""
                   fill
                   style={{ objectFit: "contain" }}
                   priority
@@ -199,10 +201,9 @@ export function HeroSection({ data }: HeroProps) {
               </div>
             </div>
 
-            {/* Decorative caption below logo */}
             <p
               className="font-crimson italic mt-3 tracking-[0.25em] text-xs uppercase"
-              style={{ color: "#9a7040", letterSpacing: "0.3em" }}
+              style={{ color: "#b8874f", letterSpacing: "0.3em" }} // was #9a7040 (~4.5:1, no margin), now ~6.3:1
             >
               Sigillum · MMXXVI
             </p>
