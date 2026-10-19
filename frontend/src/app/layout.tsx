@@ -4,6 +4,7 @@ import './globals.css';
 import { SanityLive } from '@/lib/sanity';
 import { draftMode } from 'next/headers';
 import { VisualEditing } from 'next-sanity/visual-editing';
+import { Footer } from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   title: 'El Mago de Madrid',
@@ -21,6 +22,8 @@ export default async function RootLayout({
     <html lang="es" className={`${cinzel.variable} ${crimsonText.variable} scroll-smooth`}>
       <body className={crimsonText.className}>
         {children}
+
+        <Footer />
 
         {/* Live content stream — activates draft mode when token present */}
         <SanityLive />
